@@ -3,6 +3,7 @@
   height: 200px;
   border: 1px solid black;
   margin: auto;
+  overflow: hidden;
 }
 
 #character {
@@ -22,11 +23,11 @@
     top: 140px;
   }
   30% {
-    top: 100px;
+    top: 90px;
     transform: rotate(-20deg);
   }
   70% {
-    top: 100px;
+    top: 90px;
   }
 
   90% {
@@ -39,18 +40,18 @@
 }
 
 #block {
-  width: 20px;
-  height: 20px;
-  background-color: blue;
+  display: block;
+  width: 40px;
+
   position: relative;
-  top: 120px;
-  left: 480px;
+  top: 86px;
+  left: 800px;
   animation: block 4s infinite linear;
 }
 
 @keyframes block {
   0% {
-    left: 500px;
+    left: 800px;
   }
   100% {
     left: -20px;
