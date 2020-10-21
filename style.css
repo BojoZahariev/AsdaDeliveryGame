@@ -12,6 +12,7 @@
   position: relative;
   top: 140px;
   left: 50px;
+  z-index: 999;
 }
 
 .animate {
