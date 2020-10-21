@@ -5,7 +5,7 @@ const jump = () => {
     return;
   }
   character.classList.add('animate');
-  setTimeout(removeJump, 1000); //300ms = length of animation
+  setTimeout(removeJump, 1500); //300ms = length of animation
 };
 
 document.addEventListener('click', jump);
@@ -18,7 +18,7 @@ const block = document.querySelector('#block');
 const checkDead = () => {
   let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
   let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue('left'));
-  if (blockLeft < 40 && blockLeft > 20 && characterTop >= 130) {
+  if (blockLeft < 160 && blockLeft > 50 && characterTop >= 130) {
     alert('Game over');
   }
 };

@@ -1,29 +1,29 @@
 #game {
-  width: 500px;
+  width: 800px;
   height: 200px;
   border: 1px solid black;
   margin: auto;
 }
 
 #character {
-  width: 20px;
-  height: 50px;
-  background-color: red;
+  width: 120px;
+  height: auto;
   position: relative;
-  top: 150px;
+  top: 140px;
   left: 50px;
 }
 
 .animate {
-  animation: jump 1s linear;
+  animation: jump 1.5s linear;
 }
 
 @keyframes jump {
   0% {
-    top: 150px;
+    top: 140px;
   }
   30% {
     top: 100px;
+    transform: rotate(-20deg);
   }
   70% {
     top: 100px;
@@ -31,9 +31,10 @@
 
   90% {
     top: 120px;
+    transform: rotate(20deg);
   }
   100% {
-    top: 150px;
+    top: 140px;
   }
 }
 
@@ -42,7 +43,7 @@
   height: 20px;
   background-color: blue;
   position: relative;
-  top: 130px;
+  top: 120px;
   left: 480px;
   animation: block 4s infinite linear;
 }
