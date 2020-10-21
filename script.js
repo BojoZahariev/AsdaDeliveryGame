@@ -1,24 +1,26 @@
-var character = document.getElementById('character');
-document.addEventListener('click', jump);
-function jump() {
-  if (character.classList == 'animate') {
+const character = document.querySelector('#character');
+
+const jump = () => {
+  if (character.classList === 'animate') {
     return;
   }
   character.classList.add('animate');
   setTimeout(removeJump, 1000); //300ms = length of animation
-}
+};
 
-function removeJump() {
+document.addEventListener('click', jump);
+
+const removeJump = () => {
   character.classList.remove('animate');
-}
+};
 
-var block = document.getElementById('block');
-function checkDead() {
+const block = document.querySelector('#block');
+const checkDead = () => {
   let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
   let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue('left'));
-  if (blockLeft < 20 && blockLeft > -20 && characterTop >= 130) {
+  if (blockLeft < 40 && blockLeft > 20 && characterTop >= 130) {
     alert('Game over');
   }
-}
+};
 
 setInterval(checkDead, 10);
