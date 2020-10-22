@@ -13,6 +13,7 @@
   width: 4779px;
   background-position: bottom;
   animation: slide 60s linear infinite;
+  opacity: 0.8;
 }
 
 @keyframes slide {

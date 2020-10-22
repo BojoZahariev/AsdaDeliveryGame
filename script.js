@@ -52,7 +52,7 @@ const checkDead = () => {
       el.remove();
     }
 
-    if (blockLeft < 160 && blockLeft > 50 && characterBottom <= 30) {
+    if (blockLeft < 160 && blockLeft > 50 && characterBottom <= 20) {
       document.querySelector('#smoke').style.display = 'block';
 
       document.querySelectorAll('.block').forEach(element => {
@@ -70,7 +70,7 @@ const checkDead = () => {
 
 const addObstacles = () => {
   if (gameRunning) {
-    let randomTime = randomIntFromInterval(800, 3000);
+    let randomTime = randomIntFromInterval(900, 3000);
     console.log(randomTime);
     let obstacle = document.createElement('img');
     obstacle.src = 'images/tree.png';
