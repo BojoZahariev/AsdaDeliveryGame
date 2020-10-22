@@ -45,14 +45,14 @@ const removeJump = () => {
 };
 
 const checkDead = () => {
-  let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
+  let characterBottom = parseInt(window.getComputedStyle(character).getPropertyValue('bottom'));
   document.querySelectorAll('.block').forEach(el => {
     let blockLeft = parseInt(window.getComputedStyle(el).getPropertyValue('left'));
     if (blockLeft < 10) {
       el.remove();
     }
 
-    if (blockLeft < 160 && blockLeft > 50 && characterTop >= 130) {
+    if (blockLeft < 160 && blockLeft > 50 && characterBottom <= 30) {
       document.querySelector('#smoke').style.display = 'block';
 
       document.querySelectorAll('.block').forEach(element => {

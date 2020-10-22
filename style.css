@@ -1,17 +1,34 @@
 #game {
   width: 800px;
-  height: 200px;
+  height: 300px;
   border: 1px solid black;
   margin: auto;
   overflow: hidden;
   position: relative;
 }
 
+.sliding-background {
+  background: url('images/back.png') repeat-x;
+  height: 300px;
+  width: 4779px;
+  background-position: bottom;
+  animation: slide 60s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1593px, 0, 0);
+  }
+}
+
 #character {
   width: 120px;
   height: auto;
-  position: relative;
-  top: 140px;
+  position: absolute;
+  bottom: 0;
   left: 50px;
   z-index: 999;
 }
@@ -23,43 +40,43 @@
 
 @keyframes jump {
   0% {
-    top: 140px;
+    bottom: 0;
   }
   30% {
-    top: 90px;
+    bottom: 50px;
     transform: rotate(-20deg);
   }
   70% {
-    top: 90px;
+    bottom: 50px;
   }
 
   90% {
-    top: 120px;
+    bottom: 30px;
     transform: rotate(20deg);
   }
   100% {
-    top: 140px;
+    bottom: 0;
   }
 }
 
 @-webkit-keyframes jump {
   0% {
-    top: 140px;
+    bottom: 0;
   }
   30% {
-    top: 90px;
+    bottom: 50px;
     transform: rotate(-20deg);
   }
   70% {
-    top: 90px;
+    bottom: 50px;
   }
 
   90% {
-    top: 120px;
+    bottom: 30px;
     transform: rotate(20deg);
   }
   100% {
-    top: 140px;
+    bottom: 0;
   }
 }
 
@@ -67,7 +84,7 @@
   display: block;
   width: 40px;
   position: absolute;
-  top: 150px;
+  bottom: 0;
   left: 800px;
 }
 
@@ -100,8 +117,9 @@
   background: none;
   position: absolute;
   left: 140px;
-  top: 100px;
+  bottom: 15px;
   display: none;
+  z-index: 99;
 }
 
 #smoke:after {
