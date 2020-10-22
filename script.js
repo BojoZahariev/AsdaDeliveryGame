@@ -23,7 +23,8 @@ const checkDead = () => {
   let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
   let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue('left'));
   if (blockLeft < 160 && blockLeft > 50 && characterTop >= 130) {
-    alert('Game over');
+    document.querySelector('#smoke').style.display = 'block';
+    //alert('Game over');
     scoreValue = 0;
   } else if (blockLeft < 10 && blockLeft > 6) {
   }

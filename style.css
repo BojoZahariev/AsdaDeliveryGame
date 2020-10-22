@@ -4,6 +4,7 @@
   border: 1px solid black;
   margin: auto;
   overflow: hidden;
+  position: relative;
 }
 
 #character {
@@ -90,27 +91,25 @@
   }
 }
 
-.smoke {
+#smoke {
   width: 70px;
   height: 100px;
   background: none;
   position: absolute;
-  left: 18rem;
-  margin-left: -40px;
-  z-index: 3;
-  top: 13.8rem;
+  left: 140px;
+  top: 100px;
   animation: bk 11s infinite;
+  display: none;
 }
 
-.smoke:after {
+#smoke:after {
   content: '';
   width: 100px;
   height: 100px;
   background: none;
   position: absolute;
-  background-image: -webkit-radial-gradient(42% 48%, ellipse, rgba(0, 0, 0, 0.2), transparent 25%),
-    -webkit-radial-gradient(35% 70%, ellipse, rgba(0, 0, 0, 0.2), transparent 15%),
-    -webkit-radial-gradient(42% 61%, ellipse, rgba(0, 0, 0, 0.2), transparent 10%);
+  background-image: -webkit-radial-gradient(42% 48%, ellipse, #00000033, transparent 25%), -webkit-radial-gradient(35% 70%, ellipse, #00000033, transparent 15%),
+    -webkit-radial-gradient(42% 61%, ellipse, #00000033, transparent 10%);
   animation: smoke 2s 1s infinite;
   transform: rotate(18deg);
 }
