@@ -3,6 +3,8 @@ const block = document.querySelector('#block');
 const score = document.querySelector('#score');
 const startBtn = document.querySelector('#startBtn');
 let scoreValue = 0;
+let scoreTiming;
+let checkDeadInterval;
 
 const jump = () => {
   if (character.classList === 'animate') {
@@ -15,9 +17,19 @@ const jump = () => {
 };
 
 startBtn.addEventListener('click', () => {
-  document.addEventListener('click', jump);
+  //small delay for the jump function so it doesn't jump with the start click
+  setTimeout(() => {
+    document.addEventListener('click', jump);
+  }, 500);
 
   block.classList.add('animateBlock');
+
+  scoreTiming = setInterval(() => {
+    scoreValue++;
+    score.textContent = scoreValue;
+  }, 300);
+
+  checkDeadInterval = setInterval(checkDead, 10);
 });
 
 const removeJump = () => {
@@ -31,16 +43,9 @@ const checkDead = () => {
     document.querySelector('#smoke').style.display = 'block';
     block.classList.remove('animateBlock');
     block.style.left = `${blockLeft}px`;
+    clearInterval(scoreTiming);
+    clearInterval(checkDeadInterval);
 
-    //alert('Game over');
     scoreValue = 0;
-  } else if (blockLeft < 10 && blockLeft > 6) {
   }
 };
-
-setInterval(checkDead, 10);
-
-setInterval(() => {
-  scoreValue++;
-  score.textContent = scoreValue;
-}, 300);

@@ -112,7 +112,7 @@
   position: absolute;
   background-image: -webkit-radial-gradient(42% 48%, ellipse, #00000033, transparent 25%), -webkit-radial-gradient(35% 70%, ellipse, #00000033, transparent 15%),
     -webkit-radial-gradient(42% 61%, ellipse, #00000033, transparent 10%);
-  animation: smoke 2s 1s infinite;
+  animation: smoke 2s infinite;
   transform: rotate(18deg);
   opacity: 0;
 }
