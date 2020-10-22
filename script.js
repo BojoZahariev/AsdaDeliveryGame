@@ -13,6 +13,7 @@ const jump = () => {
   if (character.classList === 'animate') {
     return;
   }
+
   character.classList.add('animate');
   setTimeout(() => {
     removeJump();
@@ -69,7 +70,7 @@ const checkDead = () => {
 
 const addObstacles = () => {
   if (gameRunning) {
-    let randomTime = randomIntFromInterval(1000, 4000);
+    let randomTime = randomIntFromInterval(800, 3000);
     console.log(randomTime);
     let obstacle = document.createElement('img');
     obstacle.src = 'images/tree.png';
