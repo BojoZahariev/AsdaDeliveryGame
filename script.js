@@ -3,9 +3,11 @@ const character = document.querySelector('#character');
 const block = document.querySelector('#block');
 const score = document.querySelector('#score');
 const startBtn = document.querySelector('#startBtn');
+const playAgainBtn = document.querySelector('#playAgainBtn');
 let scoreValue = 0;
 let scoreTiming;
 let checkDeadInterval;
+let gameRunning = true;
 
 const jump = () => {
   if (character.classList === 'animate') {
@@ -14,7 +16,7 @@ const jump = () => {
   character.classList.add('animate');
   setTimeout(() => {
     removeJump();
-  }, 1500);
+  }, 1000);
 };
 
 startBtn.addEventListener('click', () => {
@@ -22,8 +24,6 @@ startBtn.addEventListener('click', () => {
   setTimeout(() => {
     document.addEventListener('click', jump);
   }, 500);
-
-  block.classList.add('animateBlock');
 
   scoreTiming = setInterval(() => {
     scoreValue++;
@@ -35,39 +35,50 @@ startBtn.addEventListener('click', () => {
   addObstacles();
 });
 
+playAgainBtn.addEventListener('click', () => {
+  window.location.reload();
+});
+
 const removeJump = () => {
   character.classList.remove('animate');
 };
 
 const checkDead = () => {
   let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
-  let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue('left'));
-  if (blockLeft < 160 && blockLeft > 50 && characterTop >= 130) {
-    document.querySelector('#smoke').style.display = 'block';
-    block.classList.remove('animateBlock');
-    block.style.left = `${blockLeft}px`;
-    clearInterval(scoreTiming);
-    clearInterval(checkDeadInterval);
+  document.querySelectorAll('.block').forEach(el => {
+    let blockLeft = parseInt(window.getComputedStyle(el).getPropertyValue('left'));
+    if (blockLeft < 10) {
+      el.remove();
+    }
 
-    scoreValue = 0;
-  }
+    if (blockLeft < 160 && blockLeft > 50 && characterTop >= 130) {
+      document.querySelector('#smoke').style.display = 'block';
+
+      document.querySelectorAll('.block').forEach(element => {
+        element.classList.remove('animateBlock');
+      });
+      gameRunning = false;
+      el.style.left = `${blockLeft}px`;
+      clearInterval(scoreTiming);
+      clearInterval(checkDeadInterval);
+
+      scoreValue = 0;
+    }
+  });
 };
 
 const addObstacles = () => {
-  let randomTime = randomIntFromInterval(1000, 4000);
-  console.log(randomTime);
-  let obstacle = document.createElement('div');
-  obstacle.classList.add('test');
-  obstacle.classList.add('animateBlock');
-  game.appendChild(obstacle);
+  if (gameRunning) {
+    let randomTime = randomIntFromInterval(1000, 4000);
+    console.log(randomTime);
+    let obstacle = document.createElement('img');
+    obstacle.src = 'images/tree.png';
+    obstacle.classList.add('block');
+    obstacle.classList.add('animateBlock');
+    game.appendChild(obstacle);
 
-  let blockLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue('left'));
-  console.log(blockLeft);
-  if (blockLeft < -10) {
-    obstacle.remove();
+    setTimeout(addObstacles, randomTime);
   }
-
-  setTimeout(addObstacles, randomTime);
 };
 
 function randomIntFromInterval(min, max) {
