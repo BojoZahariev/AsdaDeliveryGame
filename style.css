@@ -17,6 +17,7 @@
 
 .animate {
   animation: jump 1.5s linear;
+  -webkit-animation: jump 1.5s linear;
 }
 
 @keyframes jump {
@@ -40,14 +41,35 @@
   }
 }
 
+@-webkit-keyframes jump {
+  0% {
+    top: 140px;
+  }
+  30% {
+    top: 90px;
+    transform: rotate(-20deg);
+  }
+  70% {
+    top: 90px;
+  }
+
+  90% {
+    top: 120px;
+    transform: rotate(20deg);
+  }
+  100% {
+    top: 140px;
+  }
+}
+
 #block {
   display: block;
   width: 40px;
-
   position: relative;
   top: 86px;
   left: 800px;
   animation: block 4s infinite linear;
+  -webkit-animation: block 4s infinite linear;
 }
 
 @keyframes block {
@@ -56,5 +78,54 @@
   }
   100% {
     left: -20px;
+  }
+}
+
+@-webkit-keyframes block {
+  0% {
+    left: 800px;
+  }
+  100% {
+    left: -20px;
+  }
+}
+
+.smoke {
+  width: 70px;
+  height: 100px;
+  background: none;
+  position: absolute;
+  left: 18rem;
+  margin-left: -40px;
+  z-index: 3;
+  top: 13.8rem;
+  animation: bk 11s infinite;
+}
+
+.smoke:after {
+  content: '';
+  width: 100px;
+  height: 100px;
+  background: none;
+  position: absolute;
+  background-image: -webkit-radial-gradient(42% 48%, ellipse, rgba(0, 0, 0, 0.2), transparent 25%),
+    -webkit-radial-gradient(35% 70%, ellipse, rgba(0, 0, 0, 0.2), transparent 15%),
+    -webkit-radial-gradient(42% 61%, ellipse, rgba(0, 0, 0, 0.2), transparent 10%);
+  animation: smoke 2s 1s infinite;
+  transform: rotate(18deg);
+}
+
+@keyframes smoke {
+  0% {
+    background-position: 0 0;
+    opacity: 0;
+  }
+  15%,
+  85% {
+    opacity: 1;
+  }
+  100% {
+    background-position: -20px -25px, -5px -25px, 0px -25px, 0px -25px;
+    opacity: 0;
   }
 }
