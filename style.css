@@ -72,8 +72,8 @@
 }
 
 .animateBlock {
-  animation: block 4s infinite linear;
-  -webkit-animation: block 4s infinite linear;
+  animation: block 4s forwards linear;
+  -webkit-animation: block 4s forwards linear;
 }
 
 @keyframes block {
@@ -130,4 +130,13 @@
     background-position: -20px -25px, -5px -25px, 0px -25px, 0px -25px;
     opacity: 0;
   }
+}
+
+.test {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  background-color: blue;
+  top: 50px;
+  left: 800px;
 }

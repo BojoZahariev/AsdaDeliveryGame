@@ -1,3 +1,4 @@
+const game = document.querySelector('#game');
 const character = document.querySelector('#character');
 const block = document.querySelector('#block');
 const score = document.querySelector('#score');
@@ -30,6 +31,8 @@ startBtn.addEventListener('click', () => {
   }, 300);
 
   checkDeadInterval = setInterval(checkDead, 10);
+
+  addObstacles();
 });
 
 const removeJump = () => {
@@ -49,3 +52,25 @@ const checkDead = () => {
     scoreValue = 0;
   }
 };
+
+const addObstacles = () => {
+  let randomTime = randomIntFromInterval(1000, 4000);
+  console.log(randomTime);
+  let obstacle = document.createElement('div');
+  obstacle.classList.add('test');
+  obstacle.classList.add('animateBlock');
+  game.appendChild(obstacle);
+
+  let blockLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue('left'));
+  console.log(blockLeft);
+  if (blockLeft < -10) {
+    obstacle.remove();
+  }
+
+  setTimeout(addObstacles, randomTime);
+};
+
+function randomIntFromInterval(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
