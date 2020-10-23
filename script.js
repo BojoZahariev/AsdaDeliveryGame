@@ -6,6 +6,7 @@ const startBtn = document.querySelector('#startBtn');
 const playAgainBtn = document.querySelector('#playAgainBtn');
 const background = document.querySelector('#background');
 const gameOverTitle = document.querySelector('#gameOverTitle');
+const santa = document.querySelector('#santa');
 let scoreValue = 0;
 let scoreTiming;
 let checkDeadInterval;
@@ -30,11 +31,13 @@ startBtn.addEventListener('click', () => {
 
   background.classList.add('sliding');
 
+  /*
   //starts the score count
   scoreTiming = setInterval(() => {
     scoreValue++;
     score.textContent = scoreValue;
   }, 300);
+  */
 
   checkDeadInterval = setInterval(checkDead, 10);
 
@@ -56,6 +59,18 @@ const checkDead = () => {
     let blockLeft = parseInt(window.getComputedStyle(el).getPropertyValue('left'));
     if (blockLeft < 0) {
       el.remove();
+      scoreValue++;
+      score.textContent = scoreValue;
+
+      if (scoreValue % 20 === 0) {
+        santa.style.display = 'block';
+        santa.classList.add('santaAnimated');
+
+        setTimeout(() => {
+          santa.classList.remove('santaAnimated');
+          santa.style.display = 'none';
+        }, 4000);
+      }
     }
 
     if (blockLeft < 160 && blockLeft > 50 && characterBottom <= 20) {
@@ -66,7 +81,7 @@ const checkDead = () => {
       });
       gameRunning = false;
       el.style.left = `${blockLeft}px`;
-      clearInterval(scoreTiming);
+      //clearInterval(scoreTiming);
       clearInterval(checkDeadInterval);
 
       background.classList.remove('sliding');

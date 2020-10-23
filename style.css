@@ -218,6 +218,42 @@
   }
 }
 
+#santa {
+  position: absolute;
+  top: 100px;
+  left: -300;
+  display: none;
+}
+
+.santaAnimated {
+  animation: traverse 4s linear forwards;
+  -webkit-animation: traverse 4s linear forwards;
+}
+
+@keyframes traverse {
+  0% {
+    top: 100px;
+    left: -300px;
+  }
+
+  100% {
+    top: 10px;
+    left: 900px;
+  }
+}
+
+@-webkit-keyframes traverse {
+  0% {
+    top: 100px;
+    left: -300px;
+  }
+
+  100% {
+    top: 10px;
+    left: 900px;
+  }
+}
+
 .btnDiv {
   padding: 20px;
   text-align: center;
@@ -236,6 +272,7 @@
   transition: 0.5s;
   outline: none;
   cursor: pointer;
+  user-select: none;
 }
 
 .mainBtn:hover {
