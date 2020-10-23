@@ -278,3 +278,7 @@
 .mainBtn:hover {
   background-position: right center;
 }
+
+#playAgainBtn {
+  display: none;
+}

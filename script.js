@@ -13,7 +13,7 @@ let checkDeadInterval;
 let gameRunning = true;
 
 const jump = () => {
-  if (character.classList === 'animate') {
+  if (character.classList === 'animate' || !gameRunning) {
     return;
   }
 
@@ -27,6 +27,7 @@ startBtn.addEventListener('click', () => {
   //small delay for the jump function so it doesn't jump with the start click
   setTimeout(() => {
     document.addEventListener('click', jump);
+    startBtn.style.display = 'none';
   }, 500);
 
   background.classList.add('sliding');
@@ -57,8 +58,12 @@ const checkDead = () => {
   let characterBottom = parseInt(window.getComputedStyle(character).getPropertyValue('bottom'));
   document.querySelectorAll('.block').forEach(el => {
     let blockLeft = parseInt(window.getComputedStyle(el).getPropertyValue('left'));
+
+    //remove the passed obstacles
     if (blockLeft < 0) {
       el.remove();
+
+      //score increase
       scoreValue++;
       score.textContent = scoreValue;
 
@@ -73,6 +78,7 @@ const checkDead = () => {
       }
     }
 
+    //checks for collision
     if (blockLeft < 160 && blockLeft > 50 && characterBottom <= 20) {
       document.querySelector('#smoke').style.display = 'block';
 
@@ -81,12 +87,13 @@ const checkDead = () => {
       });
       gameRunning = false;
       el.style.left = `${blockLeft}px`;
-      //clearInterval(scoreTiming);
+
       clearInterval(checkDeadInterval);
 
       background.classList.remove('sliding');
       background.style.display = 'none';
       gameOverTitle.style.display = 'block';
+      playAgainBtn.style.display = 'inline-block';
     }
   });
 };
