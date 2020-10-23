@@ -78,10 +78,12 @@ const addObstacles = () => {
     let randomTime = randomIntFromInterval(900, 3000);
     let obstacle = document.createElement('img');
 
-    if (randomTime > 1500) {
+    if (randomTime >= 2300) {
       obstacle.src = 'images/snowman.png';
-    } else {
+    } else if (randomTime >= 1600) {
       obstacle.src = 'images/tree.png';
+    } else {
+      obstacle.src = 'images/gift.png';
     }
 
     obstacle.classList.add('block');
