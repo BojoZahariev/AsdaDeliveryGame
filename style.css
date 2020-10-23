@@ -1,19 +1,22 @@
 #game {
   width: 800px;
-  height: 300px;
-  border: 1px solid black;
+  height: 295px;
   margin: auto;
   overflow: hidden;
   position: relative;
+  background-color: #92afd7;
 }
 
-.sliding-background {
+#background {
   background: url('images/back.png') repeat-x;
   height: 300px;
   width: 4779px;
   background-position: bottom;
-  animation: slide 60s linear infinite;
   opacity: 0.8;
+}
+
+.sliding {
+  animation: slide 60s linear infinite;
 }
 
 @keyframes slide {

@@ -4,6 +4,7 @@ const block = document.querySelector('#block');
 const score = document.querySelector('#score');
 const startBtn = document.querySelector('#startBtn');
 const playAgainBtn = document.querySelector('#playAgainBtn');
+const background = document.querySelector('#background');
 let scoreValue = 0;
 let scoreTiming;
 let checkDeadInterval;
@@ -25,6 +26,8 @@ startBtn.addEventListener('click', () => {
   setTimeout(() => {
     document.addEventListener('click', jump);
   }, 500);
+
+  background.classList.add('sliding');
 
   scoreTiming = setInterval(() => {
     scoreValue++;
@@ -62,6 +65,8 @@ const checkDead = () => {
       el.style.left = `${blockLeft}px`;
       clearInterval(scoreTiming);
       clearInterval(checkDeadInterval);
+
+      background.classList.remove('sliding');
 
       scoreValue = 0;
     }
