@@ -5,6 +5,7 @@ const score = document.querySelector('#score');
 const startBtn = document.querySelector('#startBtn');
 const playAgainBtn = document.querySelector('#playAgainBtn');
 const background = document.querySelector('#background');
+const gameOverTitle = document.querySelector('#gameOverTitle');
 let scoreValue = 0;
 let scoreTiming;
 let checkDeadInterval;
@@ -29,6 +30,7 @@ startBtn.addEventListener('click', () => {
 
   background.classList.add('sliding');
 
+  //starts the score count
   scoreTiming = setInterval(() => {
     scoreValue++;
     score.textContent = scoreValue;
@@ -47,6 +49,7 @@ const removeJump = () => {
   character.classList.remove('animate');
 };
 
+//checks for collision
 const checkDead = () => {
   let characterBottom = parseInt(window.getComputedStyle(character).getPropertyValue('bottom'));
   document.querySelectorAll('.block').forEach(el => {
@@ -67,8 +70,8 @@ const checkDead = () => {
       clearInterval(checkDeadInterval);
 
       background.classList.remove('sliding');
-
-      scoreValue = 0;
+      background.style.display = 'none';
+      gameOverTitle.style.display = 'block';
     }
   });
 };
@@ -78,6 +81,7 @@ const addObstacles = () => {
     let randomTime = randomIntFromInterval(900, 3000);
     let obstacle = document.createElement('img');
 
+    //alternate the obstacles
     if (randomTime >= 2300) {
       obstacle.src = 'images/snowman.png';
     } else if (randomTime >= 1600) {

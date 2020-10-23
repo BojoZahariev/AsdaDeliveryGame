@@ -13,6 +13,9 @@
   overflow: hidden;
   position: relative;
   background-color: #92afd7;
+  border: 1px solid #222;
+  border-radius: 10px;
+  margin: 20px auto;
 }
 
 #background {
@@ -20,7 +23,7 @@
   height: 300px;
   width: 4779px;
   background-position: bottom;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .sliding {
@@ -160,4 +163,81 @@
     background-position: -20px -25px, -5px -25px, 0px -25px, 0px -25px;
     opacity: 0.5;
   }
+}
+
+@-webkit-keyframes smoke {
+  0% {
+    background-position: 0 0;
+    opacity: 0.5;
+  }
+  15%,
+  85% {
+    opacity: 1;
+  }
+  100% {
+    background-position: -20px -25px, -5px -25px, 0px -25px, 0px -25px;
+    opacity: 0.5;
+  }
+}
+
+#score {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  z-index: 99;
+}
+
+#gameOverTitle {
+  display: none;
+  text-align: center;
+  position: relative;
+  top: 40%;
+  transform: scaleX(0.1);
+  animation: expand 2s linear forwards;
+  -webkit-animation: expand 2s linear forwards;
+}
+
+@keyframes expand {
+  0% {
+    transform: scaleX(0.1);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@-webkit-keyframes expand {
+  0% {
+    transform: scaleX(0.1);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.btnDiv {
+  padding: 20px;
+  text-align: center;
+}
+
+.mainBtn {
+  border: 2px solid #78b9e7;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: #124e78;
+  color: #ffc220;
+  font-size: 25px;
+  background-size: 200% auto;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-image: linear-gradient(to right, #124e78 0%, #78b9e7 50%, #124e78 100%);
+  transition: 0.5s;
+  outline: none;
+  cursor: pointer;
+}
+
+.mainBtn:hover {
+  background-position: right center;
 }

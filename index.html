@@ -7,17 +7,18 @@
   </head>
   <body>
     <div id="game">
+      <p id="score">0</p>
       <div id="smoke"></div>
       <img src="images/van2.png" id="character" alt="van" />
-      <!--<img src="images/tree.png" id="block" alt="tree" />-->
 
+      <p id="gameOverTitle">GAME OVER</p>
       <div id="background"></div>
     </div>
 
-    <p id="score">0</p>
-
-    <button id="startBtn">Start</button>
-    <button id="playAgainBtn">Reset</button>
+    <div class="btnDiv">
+      <button id="startBtn" class="mainBtn">Start</button>
+      <button id="playAgainBtn" class="mainBtn">Reset</button>
+    </div>
 
     <script src="script.js"></script>
   </body>
