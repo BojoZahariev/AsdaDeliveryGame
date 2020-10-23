@@ -1,3 +1,11 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #game {
   width: 800px;
   height: 295px;
@@ -47,11 +55,11 @@
     bottom: 0;
   }
   30% {
-    bottom: 50px;
+    bottom: 55px;
     transform: rotate(-20deg);
   }
   70% {
-    bottom: 50px;
+    bottom: 55px;
   }
 
   90% {
@@ -68,11 +76,11 @@
     bottom: 0;
   }
   30% {
-    bottom: 50px;
+    bottom: 55px;
     transform: rotate(-20deg);
   }
   70% {
-    bottom: 50px;
+    bottom: 55px;
   }
 
   90% {
@@ -134,15 +142,15 @@
   position: absolute;
   background-image: -webkit-radial-gradient(42% 48%, ellipse, #00000033, transparent 25%), -webkit-radial-gradient(35% 70%, ellipse, #00000033, transparent 15%),
     -webkit-radial-gradient(42% 61%, ellipse, #00000033, transparent 10%);
-  animation: smoke 2s infinite;
+  animation: smoke 3s infinite;
   transform: rotate(18deg);
-  opacity: 0;
+  opacity: 0.5;
 }
 
 @keyframes smoke {
   0% {
     background-position: 0 0;
-    opacity: 0;
+    opacity: 0.5;
   }
   15%,
   85% {
@@ -150,6 +158,6 @@
   }
   100% {
     background-position: -20px -25px, -5px -25px, 0px -25px, 0px -25px;
-    opacity: 0;
+    opacity: 0.5;
   }
 }

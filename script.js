@@ -51,7 +51,7 @@ const checkDead = () => {
   let characterBottom = parseInt(window.getComputedStyle(character).getPropertyValue('bottom'));
   document.querySelectorAll('.block').forEach(el => {
     let blockLeft = parseInt(window.getComputedStyle(el).getPropertyValue('left'));
-    if (blockLeft < 10) {
+    if (blockLeft < 0) {
       el.remove();
     }
 
@@ -76,9 +76,14 @@ const checkDead = () => {
 const addObstacles = () => {
   if (gameRunning) {
     let randomTime = randomIntFromInterval(900, 3000);
-    console.log(randomTime);
     let obstacle = document.createElement('img');
-    obstacle.src = 'images/tree.png';
+
+    if (randomTime > 1500) {
+      obstacle.src = 'images/snowman.png';
+    } else {
+      obstacle.src = 'images/tree.png';
+    }
+
     obstacle.classList.add('block');
     obstacle.classList.add('animateBlock');
     game.appendChild(obstacle);
