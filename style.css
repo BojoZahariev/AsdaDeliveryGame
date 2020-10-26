@@ -8,14 +8,22 @@
 
 html {
   background-color: #bfd7ea;
+  color: #2e4057;
+}
+
+.bigTitle {
+  font-size: 50px;
+  text-align: center;
+  padding: 20px;
+  color: #2e4057;
 }
 
 #game {
   width: 800px;
   height: 295px;
-  margin: auto;
   overflow: hidden;
   position: relative;
+
   background-color: #bfd7ea;
   margin: 20px auto;
 }
@@ -133,7 +141,7 @@ html {
   height: 100px;
   background: none;
   position: absolute;
-  left: 140px;
+  left: 160px;
   bottom: 15px;
   display: none;
   z-index: 99;
@@ -278,10 +286,24 @@ html {
   user-select: none;
 }
 
+.mainBtn:active {
+  transform: scale(0.9);
+}
+
 .mainBtn:hover {
   background-position: right center;
 }
 
 #playAgainBtn {
   display: none;
+}
+
+#underText {
+  text-align: center;
+}
+
+#mouse {
+  width: 50px;
+  opacity: 0.5;
+  vertical-align: middle;
 }
