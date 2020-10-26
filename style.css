@@ -105,6 +105,57 @@ html {
   }
 }
 
+#van {
+  width: 100%;
+  z-index: 9;
+  transform: translateY(3px);
+}
+
+.animatedVan {
+  animation: carmove 0.3s infinite linear;
+  -webkit-animation: carmove 0.3s infinite linear;
+}
+
+@keyframes carmove {
+  0% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+
+  100% {
+    transform: translateY(3px);
+  }
+}
+
+@-webkit-keyframes carmove {
+  0% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+
+  100% {
+    transform: translateY(3px);
+  }
+}
+
+.wheels {
+  width: 14%;
+  position: absolute;
+  bottom: 0;
+}
+
+#wheel1 {
+  left: 14.5%;
+}
+
+#wheel2 {
+  left: 80.6%;
+}
+
 .block {
   display: block;
   width: 40px;
@@ -204,6 +255,7 @@ html {
   text-align: center;
   position: relative;
   top: 40%;
+  font-size: 50px;
   transform: scaleX(0.1);
   animation: expand 2s linear forwards;
   -webkit-animation: expand 2s linear forwards;
@@ -271,7 +323,7 @@ html {
 }
 
 .mainBtn {
-  border: 2px solid #78b9e7;
+  border: 2px solid #ffc220;
   padding: 10px 30px;
   border-radius: 20px;
   background-color: #124e78;
@@ -300,6 +352,8 @@ html {
 
 #underText {
   text-align: center;
+  font-size: 20px;
+  user-select: none;
 }
 
 #mouse {

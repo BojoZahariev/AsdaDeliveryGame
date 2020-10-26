@@ -1,5 +1,6 @@
 const game = document.querySelector('#game');
 const character = document.querySelector('#character');
+const van = document.querySelector('#van');
 const block = document.querySelector('#block');
 const score = document.querySelector('#score');
 const startBtn = document.querySelector('#startBtn');
@@ -24,25 +25,18 @@ const jump = () => {
 };
 
 startBtn.addEventListener('click', () => {
+  van.classList.add('animatedVan');
+
   //small delay for the jump function so it doesn't jump with the start click
   setTimeout(() => {
     document.addEventListener('click', jump);
     startBtn.style.display = 'none';
-  }, 500);
+    background.classList.add('sliding');
 
-  background.classList.add('sliding');
+    checkDeadInterval = setInterval(checkDead, 10);
 
-  /*
-  //starts the score count
-  scoreTiming = setInterval(() => {
-    scoreValue++;
-    score.textContent = scoreValue;
-  }, 300);
-  */
-
-  checkDeadInterval = setInterval(checkDead, 10);
-
-  addObstacles();
+    addObstacles();
+  }, 1000);
 });
 
 playAgainBtn.addEventListener('click', () => {
@@ -94,6 +88,7 @@ const checkDead = () => {
       background.style.display = 'none';
       gameOverTitle.style.display = 'block';
       playAgainBtn.style.display = 'inline-block';
+      van.classList.remove('animatedVan');
     }
   });
 };
