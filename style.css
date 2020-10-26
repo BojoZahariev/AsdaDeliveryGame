@@ -23,7 +23,7 @@ html {
   height: 295px;
   overflow: hidden;
   position: relative;
-
+  border-bottom: 1px solid #2e4057;
   background-color: #bfd7ea;
   margin: 20px auto;
 }
@@ -190,7 +190,7 @@ html {
   }
 }
 
-#score {
+.scoreText {
   position: absolute;
   top: 0;
   right: 0;

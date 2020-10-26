@@ -79,7 +79,7 @@ const checkDead = () => {
     }
 
     //checks for collision
-    if (blockLeft < 180 && blockLeft > 55 && characterBottom <= 20) {
+    if (blockLeft < 190 && blockLeft > 55 && characterBottom <= 20) {
       document.querySelector('#smoke').style.display = 'block';
 
       document.querySelectorAll('.block').forEach(element => {
