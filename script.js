@@ -64,10 +64,10 @@ const checkDead = () => {
       el.remove();
 
       //score increase
-      scoreValue++;
+      scoreValue += 10;
       score.textContent = scoreValue;
 
-      if (scoreValue % 20 === 0) {
+      if (scoreValue % 200 === 0) {
         santa.style.display = 'block';
         santa.classList.add('santaAnimated');
 
@@ -100,7 +100,7 @@ const checkDead = () => {
 
 const addObstacles = () => {
   if (gameRunning) {
-    let randomTime = randomIntFromInterval(900, 3000);
+    let randomTime = randomIntFromInterval(950, 3000);
     let obstacle = document.createElement('img');
 
     //alternate the obstacles

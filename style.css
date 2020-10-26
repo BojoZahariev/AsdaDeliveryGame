@@ -17,7 +17,6 @@ html {
   overflow: hidden;
   position: relative;
   background-color: #d7fff1;
-
   margin: 20px auto;
 }
 
@@ -189,6 +188,7 @@ html {
   right: 0;
   padding: 5px;
   z-index: 99;
+  color: #2e4057;
 }
 
 #gameOverTitle {
