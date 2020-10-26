@@ -6,15 +6,18 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: #daffef;
+}
+
 #game {
   width: 800px;
   height: 295px;
   margin: auto;
   overflow: hidden;
   position: relative;
-  background-color: #92afd7;
-  border: 1px solid #222;
-  border-radius: 10px;
+  background-color: #d7fff1;
+
   margin: 20px auto;
 }
 
