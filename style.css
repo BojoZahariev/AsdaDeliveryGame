@@ -7,7 +7,7 @@
 }
 
 html {
-  background-color: #daffef;
+  background-color: #bfd7ea;
 }
 
 #game {
@@ -16,7 +16,7 @@ html {
   margin: auto;
   overflow: hidden;
   position: relative;
-  background-color: #d7fff1;
+  background-color: #bfd7ea;
   margin: 20px auto;
 }
 
@@ -42,7 +42,7 @@ html {
 }
 
 #character {
-  width: 120px;
+  width: 150px;
   height: auto;
   position: absolute;
   bottom: 0;
