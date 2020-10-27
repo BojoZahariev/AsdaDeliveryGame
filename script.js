@@ -12,6 +12,7 @@ let scoreValue = 0;
 let scoreTiming;
 let checkDeadInterval;
 let gameRunning = true;
+let slowStart = true;
 
 const jump = () => {
   if (character.classList === 'animate' || !gameRunning) {
@@ -69,6 +70,8 @@ const checkDead = () => {
           santa.classList.remove('santaAnimated');
           santa.style.display = 'none';
         }, 4000);
+      } else if (scoreValue > 20) {
+        slowStart = false;
       }
     }
 
@@ -95,7 +98,14 @@ const checkDead = () => {
 
 const addObstacles = () => {
   if (gameRunning) {
-    let randomTime = randomIntFromInterval(950, 3000);
+    let randomTime;
+    if (slowStart) {
+      randomTime = randomIntFromInterval(2500, 3000);
+    } else {
+      console.log('ding');
+      randomTime = randomIntFromInterval(950, 3000);
+    }
+
     let obstacle = document.createElement('img');
 
     //alternate the obstacles
