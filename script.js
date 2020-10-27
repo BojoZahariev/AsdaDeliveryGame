@@ -25,14 +25,12 @@ var database = firebase.database();
 var players = database.ref().child('players');
 console.log(players);
 
-/*
 // Push our first recommendation to the end of the list and assign it a
 // unique ID automatically.
 players.push({
-  name: 'John Smith',
-  score: '88'
+  name: 'BBBBB',
+  score: '77'
 });
-*/
 
 const jump = () => {
   if (character.classList === 'animate' || !gameRunning) {
