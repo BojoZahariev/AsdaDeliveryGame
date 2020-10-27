@@ -18,6 +18,15 @@ html {
   color: #2e4057;
 }
 
+.logo {
+  width: 150px;
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}
+
 #game {
   width: 800px;
   height: 295px;
@@ -56,6 +65,12 @@ html {
   bottom: 0;
   left: 50px;
   z-index: 999;
+
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
 }
 
 .animate {
@@ -111,12 +126,35 @@ html {
   transform: translateY(3px);
 }
 
-.animatedVan {
-  animation: carmove 0.3s infinite linear;
-  -webkit-animation: carmove 0.3s infinite linear;
+.vanCrashed {
+  animation: vanDrop 0.5s forwards linear;
+  -webkit-animation: vanDrop 0.5s forwards linear;
 }
 
-@keyframes carmove {
+@keyframes vanDrop {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+@-webkit-keyframes vanDrop {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+.animatedVan {
+  animation: carMove 0.3s infinite linear;
+  -webkit-animation: carMove 0.3s infinite linear;
+}
+
+@keyframes carMove {
   0% {
     transform: translateY(3px);
   }
@@ -129,7 +167,7 @@ html {
   }
 }
 
-@-webkit-keyframes carmove {
+@-webkit-keyframes carMove {
   0% {
     transform: translateY(3px);
   }
@@ -156,12 +194,107 @@ html {
   left: 80.6%;
 }
 
+.animatedWheel1 {
+  animation: leftWheelFly 1.5s forwards linear;
+  -webkit-animation: leftWheelFly 1.5s forwards linear;
+}
+
+.animatedWheel2 {
+  animation: rightWheelFly 1.5s forwards linear;
+  -webkit-animation: rightWheelFly 1.5s forwards linear;
+}
+
+@keyframes leftWheelFly {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 50px;
+    left: 2%;
+  }
+
+  100% {
+    bottom: 0px;
+    left: -10%;
+  }
+}
+
+@-webkit-keyframes leftWheelFly {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 50px;
+    left: 2%;
+  }
+
+  100% {
+    bottom: 0px;
+    left: -10%;
+  }
+}
+
+@keyframes rightWheelFly {
+  0% {
+    bottom: 0;
+  }
+  30% {
+    bottom: 60px;
+    left: 110%;
+  }
+
+  50% {
+    bottom: 0px;
+    left: 120%;
+  }
+
+  75% {
+    bottom: 10px;
+    left: 130%;
+  }
+
+  100% {
+    bottom: 0px;
+    left: 140%;
+  }
+}
+
+@-webkit-keyframes rightWheelFly {
+  0% {
+    bottom: 0;
+  }
+  30% {
+    bottom: 60px;
+    left: 110%;
+  }
+
+  50% {
+    bottom: 0px;
+    left: 120%;
+  }
+
+  75% {
+    bottom: 10px;
+    left: 130%;
+  }
+
+  100% {
+    bottom: 0px;
+    left: 140%;
+  }
+}
+
 .block {
   display: block;
   width: 40px;
   position: absolute;
   bottom: 0;
   left: 800px;
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
 }
 
 .animateBlock {
@@ -323,14 +456,13 @@ html {
 }
 
 .mainBtn {
-  border: 2px solid #ffc220;
+  border: 2px solid #fc9f5b;
   padding: 10px 30px;
   border-radius: 20px;
   background-color: #124e78;
-  color: #ffc220;
+  color: #fc9f5b;
   font-size: 25px;
   background-size: 200% auto;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   background-image: linear-gradient(to right, #124e78 0%, #78b9e7 50%, #124e78 100%);
   transition: 0.5s;
   outline: none;

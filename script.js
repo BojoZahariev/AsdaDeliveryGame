@@ -1,6 +1,8 @@
 const game = document.querySelector('#game');
 const character = document.querySelector('#character');
 const van = document.querySelector('#van');
+const wheel1 = document.querySelector('#wheel1');
+const wheel2 = document.querySelector('#wheel2');
 const block = document.querySelector('#block');
 const score = document.querySelector('#score');
 const startBtn = document.querySelector('#startBtn');
@@ -93,6 +95,9 @@ const checkDead = () => {
       gameOverTitle.style.display = 'block';
       playAgainBtn.style.display = 'inline-block';
       van.classList.remove('animatedVan');
+      van.classList.add('vanCrashed');
+      wheel1.classList.add('animatedWheel1');
+      wheel2.classList.add('animatedWheel2');
     }
   });
 };
