@@ -62,7 +62,7 @@ const checkDead = () => {
       scoreValue += 10;
       score.textContent = scoreValue;
 
-      if (scoreValue % 200 === 0) {
+      if (scoreValue % 100 === 0) {
         santa.style.display = 'block';
         santa.classList.add('santaAnimated');
 
@@ -70,6 +70,7 @@ const checkDead = () => {
           santa.classList.remove('santaAnimated');
           santa.style.display = 'none';
         }, 4000);
+        //increase difficulty
       } else if (scoreValue > 20) {
         slowStart = false;
       }
@@ -99,10 +100,13 @@ const checkDead = () => {
 const addObstacles = () => {
   if (gameRunning) {
     let randomTime;
+
+    //decreased difficulty at start
     if (slowStart) {
       randomTime = randomIntFromInterval(2500, 3000);
+
+      //normal difficulty
     } else {
-      console.log('ding');
       randomTime = randomIntFromInterval(950, 3000);
     }
 

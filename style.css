@@ -68,16 +68,16 @@ html {
     bottom: 0;
   }
   30% {
-    bottom: 55px;
+    bottom: 60px;
     transform: rotate(-20deg);
   }
   70% {
-    bottom: 55px;
+    bottom: 60px;
   }
 
   90% {
     bottom: 30px;
-    transform: rotate(20deg);
+    transform: rotate(30deg);
   }
   100% {
     bottom: 0;
