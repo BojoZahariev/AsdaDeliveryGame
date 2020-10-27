@@ -16,6 +16,24 @@ let checkDeadInterval;
 let gameRunning = true;
 let slowStart = true;
 
+// Reference to your entire Firebase database
+var database = firebase.database();
+
+// Get a reference to the recommendations object of your Firebase.
+// Note: this doesn't exist yet. But when we write to our Firebase using
+// this reference, it will create this object for us!
+var players = database.ref().child('players');
+console.log(players);
+
+/*
+// Push our first recommendation to the end of the list and assign it a
+// unique ID automatically.
+players.push({
+  name: 'John Smith',
+  score: '88'
+});
+*/
+
 const jump = () => {
   if (character.classList === 'animate' || !gameRunning) {
     return;

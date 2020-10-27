@@ -34,6 +34,28 @@
       <button id="playAgainBtn" class="mainBtn">Try Again</button>
     </div>
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyB4WDbISsEjPtxZ4ShZ9EvcmJyDrH7Di64',
+        authDomain: 'game-score-8aae1.firebaseapp.com',
+        databaseURL: 'https://game-score-8aae1.firebaseio.com',
+        projectId: 'game-score-8aae1',
+        storageBucket: 'game-score-8aae1.appspot.com',
+        messagingSenderId: '903085174116',
+        appId: '1:903085174116:web:178622d0700d00601a5e71'
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
     <script src="script.js"></script>
   </body>
 </html>
