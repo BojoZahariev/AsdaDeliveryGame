@@ -38,9 +38,13 @@ playersOrdered.on('value', function(snapshot) {
 
 //Display Scores
 const displayScores = data => {
+  //clear the list
+  topScores.innerHTML = '';
+
   data.forEach(function(userSnapshot) {
-    console.log(userSnapshot.val().name);
-    console.log(userSnapshot.val().score);
+    let scorePart = document.createElement('li');
+    scorePart.textContent = `${userSnapshot.val().name}: ${userSnapshot.val().score}`;
+    topScores.appendChild(scorePart);
   });
 };
 

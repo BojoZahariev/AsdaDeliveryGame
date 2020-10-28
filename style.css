@@ -499,3 +499,13 @@ html {
   text-align: center;
   display: none;
 }
+
+.smallTitle {
+  text-align: center;
+}
+
+#topScores {
+  text-align: center;
+  display: flex;
+  flex-flow: column-reverse;
+}
