@@ -26,8 +26,13 @@ var database = firebase.database();
 // this reference, it will create this object for us!
 var players = database.ref().child('players');
 
-// Push our first recommendation to the end of the list and assign it a
-// unique ID automatically.
+//var reference = db.ref('/test/');
+players.on('value', function(snapshot) {
+  snapshot.forEach(function(userSnapshot) {
+    console.log(userSnapshot.val().name);
+    console.log(userSnapshot.val().score);
+  });
+});
 
 form.addEventListener('submit', e => {
   e.preventDefault();
