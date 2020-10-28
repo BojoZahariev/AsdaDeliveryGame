@@ -11,6 +11,8 @@ const background = document.querySelector('#background');
 const gameOverTitle = document.querySelector('#gameOverTitle');
 const santa = document.querySelector('#santa');
 const form = document.querySelector('#form');
+const topScores = document.querySelector('#topScores');
+
 let scoreValue = 0;
 let scoreTiming;
 let checkDeadInterval;
@@ -31,12 +33,18 @@ var playersOrdered = database
   .limitToLast(3);
 
 playersOrdered.on('value', function(snapshot) {
-  snapshot.forEach(function(userSnapshot) {
+  displayScores(snapshot);
+});
+
+//Display Scores
+const displayScores = data => {
+  data.forEach(function(userSnapshot) {
     console.log(userSnapshot.val().name);
     console.log(userSnapshot.val().score);
   });
-});
+};
 
+//Add to the scores db
 var players = database.ref().child('players');
 form.addEventListener('submit', e => {
   e.preventDefault();
