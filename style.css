@@ -494,16 +494,18 @@ html {
   vertical-align: middle;
 }
 
-#form {
-  text-transform: uppercase;
-  text-align: center;
-  display: none;
-}
-
 .smallTitle {
   text-align: center;
 }
 
+#form {
+  text-align: center;
+  display: none;
+}
+
+input {
+  text-transform: uppercase;
+}
 #topScores {
   text-align: center;
   display: flex;

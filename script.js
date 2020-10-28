@@ -11,6 +11,7 @@ const background = document.querySelector('#background');
 const gameOverTitle = document.querySelector('#gameOverTitle');
 const santa = document.querySelector('#santa');
 const form = document.querySelector('#form');
+const name = document.querySelector('#name');
 const topScores = document.querySelector('#topScores');
 
 let scoreValue = 0;
@@ -53,13 +54,15 @@ var players = database.ref().child('players');
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  players.push({
-    name: document.querySelector('#name').value,
-    score: scoreValue
-  });
+  if (name.value !== '') {
+    players.push({
+      name: name.value,
+      score: scoreValue
+    });
 
-  form.reset();
-  form.style.display = 'none';
+    form.reset();
+    form.style.display = 'none';
+  }
 });
 
 const jump = () => {
