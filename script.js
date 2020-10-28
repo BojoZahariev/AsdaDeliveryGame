@@ -24,16 +24,20 @@ var database = firebase.database();
 // Get a reference to the recommendations object of your Firebase.
 // Note: this doesn't exist yet. But when we write to our Firebase using
 // this reference, it will create this object for us!
-var players = database.ref().child('players');
+var playersOrdered = database
+  .ref()
+  .child('players')
+  .orderByChild('score')
+  .limitToLast(3);
 
-//var reference = db.ref('/test/');
-players.on('value', function(snapshot) {
+playersOrdered.on('value', function(snapshot) {
   snapshot.forEach(function(userSnapshot) {
     console.log(userSnapshot.val().name);
     console.log(userSnapshot.val().score);
   });
 });
 
+var players = database.ref().child('players');
 form.addEventListener('submit', e => {
   e.preventDefault();
 
