@@ -32,12 +32,14 @@ html {
   height: 295px;
   overflow: hidden;
   position: relative;
-  border-bottom: 1px solid #2e4057;
+  border-bottom: 2px solid #2e4057;
   background-color: #bfd7ea;
   margin: 20px auto;
 }
 
 #background {
+  position: absolute;
+  top: 0;
   background: url('images/back.png') repeat-x;
   height: 300px;
   width: 4779px;
@@ -47,9 +49,19 @@ html {
 
 .sliding {
   animation: slide 60s linear infinite;
+  -webkit-animation: slide 60s linear infinite;
 }
 
 @keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1593px, 0, 0);
+  }
+}
+
+@-webkit-keyframes slide {
   0% {
     transform: translate3d(0, 0, 0);
   }
@@ -383,11 +395,13 @@ html {
   color: #2e4057;
 }
 
+.endGameDiv {
+  text-align: center;
+}
+
 #gameOverTitle {
   display: none;
-  text-align: center;
-  position: relative;
-  top: 40%;
+  padding: 10px;
   font-size: 50px;
   transform: scaleX(0.1);
   animation: expand 2s linear forwards;
@@ -412,6 +426,16 @@ html {
   100% {
     transform: scaleX(1);
   }
+}
+
+#form {
+  text-align: center;
+  display: none;
+  padding: 10px;
+}
+
+input {
+  text-transform: uppercase;
 }
 
 #santa {
@@ -468,6 +492,12 @@ html {
   outline: none;
   cursor: pointer;
   user-select: none;
+  margin: 10px auto;
+  z-index: 99;
+}
+
+#startBtn {
+  margin: 50px auto;
 }
 
 .mainBtn:active {
@@ -489,25 +519,29 @@ html {
 }
 
 #mouse {
-  width: 50px;
+  width: 40px;
   opacity: 0.5;
   vertical-align: middle;
 }
 
 .smallTitle {
   text-align: center;
+  border-bottom: 1px solid #2e4057;
+  width: 300px;
+  margin: auto;
+  padding: 10px;
 }
 
-#form {
-  text-align: center;
-  display: none;
-}
-
-input {
-  text-transform: uppercase;
-}
 #topScores {
+  max-width: 200px;
+  margin: 10px auto;
+  list-style: none;
   text-align: center;
   display: flex;
   flex-flow: column-reverse;
+}
+
+#topScores > li {
+  display: flex;
+  justify-content: space-between;
 }

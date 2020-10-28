@@ -31,7 +31,7 @@ var playersOrdered = database
   .ref()
   .child('players')
   .orderByChild('score')
-  .limitToLast(3);
+  .limitToLast(5);
 
 playersOrdered.on('value', function(snapshot) {
   displayScores(snapshot);
@@ -44,7 +44,14 @@ const displayScores = data => {
 
   data.forEach(function(userSnapshot) {
     let scorePart = document.createElement('li');
-    scorePart.textContent = `${userSnapshot.val().name}: ${userSnapshot.val().score}`;
+    let scorePartName = document.createElement('span');
+    let scorePartScore = document.createElement('span');
+    scorePartName.textContent = userSnapshot.val().name;
+    scorePartScore.textContent = userSnapshot.val().score;
+    scorePart.appendChild(scorePartName);
+    scorePart.appendChild(scorePartScore);
+
+    //scorePart.textContent = `${userSnapshot.val().name}: ${userSnapshot.val().score}`;
     topScores.appendChild(scorePart);
   });
 };
@@ -56,7 +63,7 @@ form.addEventListener('submit', e => {
 
   if (name.value !== '') {
     players.push({
-      name: name.value,
+      name: name.value.toUpperCase(),
       score: scoreValue
     });
 
@@ -142,7 +149,7 @@ const checkDead = () => {
       background.classList.remove('sliding');
       background.style.display = 'none';
       gameOverTitle.style.display = 'block';
-      playAgainBtn.style.display = 'inline-block';
+      playAgainBtn.style.display = 'block';
       van.classList.remove('animatedVan');
       van.classList.add('vanCrashed');
       wheel1.classList.add('animatedWheel1');
