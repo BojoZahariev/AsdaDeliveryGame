@@ -493,3 +493,8 @@ html {
   opacity: 0.5;
   vertical-align: middle;
 }
+
+#form {
+  text-align: center;
+  display: none;
+}

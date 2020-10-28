@@ -10,6 +10,7 @@ const playAgainBtn = document.querySelector('#playAgainBtn');
 const background = document.querySelector('#background');
 const gameOverTitle = document.querySelector('#gameOverTitle');
 const santa = document.querySelector('#santa');
+const form = document.querySelector('#form');
 let scoreValue = 0;
 let scoreTiming;
 let checkDeadInterval;
@@ -28,14 +29,7 @@ var players = database.ref().child('players');
 // Push our first recommendation to the end of the list and assign it a
 // unique ID automatically.
 
-/*
-players.push({
-  name: 'BBBBB',
-  score: '77'
-});
-*/
-
-document.querySelector('#form').addEventListener('submit', e => {
+form.addEventListener('submit', e => {
   e.preventDefault();
 
   players.push({
@@ -43,7 +37,8 @@ document.querySelector('#form').addEventListener('submit', e => {
     score: scoreValue
   });
 
-  document.querySelector('#form').reset();
+  form.reset();
+  form.style.display = 'none';
 });
 
 const jump = () => {
@@ -128,6 +123,7 @@ const checkDead = () => {
       van.classList.add('vanCrashed');
       wheel1.classList.add('animatedWheel1');
       wheel2.classList.add('animatedWheel2');
+      form.style.display = 'block';
     }
   });
 };
