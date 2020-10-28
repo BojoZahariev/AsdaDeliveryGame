@@ -16,6 +16,7 @@ let checkDeadInterval;
 let gameRunning = true;
 let slowStart = true;
 
+//FIREBASE
 // Reference to your entire Firebase database
 var database = firebase.database();
 
@@ -23,13 +24,26 @@ var database = firebase.database();
 // Note: this doesn't exist yet. But when we write to our Firebase using
 // this reference, it will create this object for us!
 var players = database.ref().child('players');
-console.log(players);
 
 // Push our first recommendation to the end of the list and assign it a
 // unique ID automatically.
+
+/*
 players.push({
   name: 'BBBBB',
   score: '77'
+});
+*/
+
+document.querySelector('#form').addEventListener('submit', e => {
+  e.preventDefault();
+
+  players.push({
+    name: document.querySelector('#name').value,
+    score: scoreValue
+  });
+
+  document.querySelector('#form').reset();
 });
 
 const jump = () => {
