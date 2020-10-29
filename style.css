@@ -14,8 +14,9 @@ html {
 .bigTitle {
   font-size: 50px;
   text-align: center;
-  padding: 20px;
+  padding: 40px;
   color: #2e4057;
+  margin-bottom: 50px;
 }
 
 .logo {
@@ -29,17 +30,17 @@ html {
 
 #game {
   width: 800px;
-  height: 295px;
+  height: 350px;
   overflow: hidden;
   position: relative;
   border-bottom: 2px solid #2e4057;
   background-color: #bfd7ea;
-  margin: 100px auto 20px;
+  margin: 20px auto;
 }
 
 #background {
   background: url('images/back.png') repeat-x;
-  height: 300px;
+  height: 352px;
   width: 4779px;
   background-position: bottom;
   opacity: 0.6;
@@ -423,7 +424,7 @@ html {
 }
 
 #startBtn {
-  margin: 100px auto;
+  margin: 150px auto;
 }
 
 .mainBtn:active {
