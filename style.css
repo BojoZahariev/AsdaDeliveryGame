@@ -414,7 +414,7 @@ html {
   font-size: 25px;
   background-size: 200% auto;
   background-image: linear-gradient(to right, #124e78 0%, #78b9e7 50%, #124e78 100%);
-  transition: 0.5s;
+  transition: 1.5s;
   outline: none;
   cursor: pointer;
   user-select: none;
@@ -507,8 +507,13 @@ input {
   height: 50px;
   padding: 3px;
   border-radius: 15px;
-  transition: width 1s;
+  transition: 1.5s ease-out;
   z-index: 99;
+  font-size: 18px;
+}
+
+#submitBtn:active {
+  transform: scale(1);
 }
 
 label {

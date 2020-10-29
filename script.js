@@ -13,7 +13,6 @@ const santa = document.querySelector('#santa');
 const form = document.querySelector('#form');
 const name = document.querySelector('#name');
 const submitBtn = document.querySelector('#submitBtn');
-
 const topScores = document.querySelector('#topScores');
 
 let scoreValue = 0;
