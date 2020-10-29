@@ -38,8 +38,6 @@ html {
 }
 
 #background {
-  position: absolute;
-  top: 0;
   background: url('images/back.png') repeat-x;
   height: 300px;
   width: 4779px;
@@ -396,6 +394,9 @@ html {
 }
 
 .endGameDiv {
+  top: 0;
+  width: 100%;
+  position: absolute;
   text-align: center;
 }
 
