@@ -12,6 +12,8 @@ const gameOverTitle = document.querySelector('#gameOverTitle');
 const santa = document.querySelector('#santa');
 const form = document.querySelector('#form');
 const name = document.querySelector('#name');
+const submitBtn = document.querySelector('#submitBtn');
+
 const topScores = document.querySelector('#topScores');
 
 let scoreValue = 0;
@@ -57,20 +59,32 @@ const displayScores = data => {
 };
 
 //Add to the scores db
-var players = database.ref().child('players');
+let players = database.ref().child('players');
+
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  if (name.value !== '') {
-    players.push({
-      name: name.value.toUpperCase(),
-      score: scoreValue
-    });
+  players.push({
+    name: name.value.toUpperCase(),
+    score: scoreValue
+  });
 
-    form.reset();
-    form.style.display = 'none';
-  }
+  form.reset();
+  form.style.display = 'none';
 });
+
+submitBtn.addEventListener('click', e => {
+  submitBtn.style.width = '70px';
+  submitBtn.textContent = 'Submit';
+});
+/*
+const submitBtnChange = () => {
+  submitBtn.style.width = '50px';
+  submitBtn.textContent = 'Submit';
+};
+*/
+
+//submitBtn.addEventListener('click', submitBtnChange);
 
 const jump = () => {
   if (character.classList === 'animate' || !gameRunning) {

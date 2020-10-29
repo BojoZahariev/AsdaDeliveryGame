@@ -469,12 +469,51 @@ html {
 
 #form {
   text-align: center;
+  position: relative;
   display: none;
   padding: 10px;
 }
 
+#inputDiv {
+  position: relative;
+  width: 250px;
+  margin: auto;
+}
+
 input {
   text-transform: uppercase;
+  width: 240px;
+  height: 50px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 3px 20px;
+  margin: 0px 10px;
+  box-shadow: inset 0.2rem 0.2rem 0.5rem #86aac7, inset -0.2rem -0.2rem 0.5rem #dce3e9;
+  background: #bfd7ea;
+  color: #1c3144;
+  caret-color: #1c3144;
+  border: 2px solid #fc9f5b;
+}
+
+#submitBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: auto;
+  width: 250px;
+  height: 50px;
+  padding: 3px;
+  border-radius: 15px;
+  transition: width 1s;
+  z-index: 99;
+}
+
+label {
+  position: absolute;
+  top: 0;
 }
 
 #santa {

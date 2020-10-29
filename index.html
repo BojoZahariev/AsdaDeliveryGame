@@ -26,9 +26,13 @@
       <div class="endGameDiv">
         <p id="gameOverTitle">GAME OVER</p>
         <form id="form">
-          <input type="text" id="name" placeholder="NAME" required />
+          <!--<label for="name">Want to record your score?</label>-->
+          <div id="inputDiv">
+            <input type="text" id="name" placeholder="NAME" required />
 
-          <button type="submit">Submit Score</button>
+            <!--<button id="scoreBtn">Record your Score</button>-->
+            <button id="submitBtn" type="submit">Submit Your Score</button>
+          </div>
         </form>
 
         <button id="startBtn" class="mainBtn">Start</button>
