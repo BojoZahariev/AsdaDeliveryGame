@@ -34,7 +34,7 @@ html {
   position: relative;
   border-bottom: 2px solid #2e4057;
   background-color: #bfd7ea;
-  margin: 20px auto;
+  margin: 100px auto 20px;
 }
 
 #background {
@@ -400,6 +400,44 @@ html {
   text-align: center;
 }
 
+.btnDiv {
+  padding: 20px;
+  text-align: center;
+}
+
+.mainBtn {
+  border: 2px solid #fc9f5b;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: #124e78;
+  color: #fc9f5b;
+  font-size: 25px;
+  background-size: 200% auto;
+  background-image: linear-gradient(to right, #124e78 0%, #78b9e7 50%, #124e78 100%);
+  transition: 0.5s;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  margin: 10px auto;
+  z-index: 99;
+}
+
+#startBtn {
+  margin: 100px auto;
+}
+
+.mainBtn:active {
+  transform: scale(0.9);
+}
+
+.mainBtn:hover {
+  background-position: right center;
+}
+
+#playAgainBtn {
+  display: none;
+}
+
 #gameOverTitle {
   display: none;
   padding: 10px;
@@ -473,44 +511,6 @@ input {
     top: 10px;
     left: 900px;
   }
-}
-
-.btnDiv {
-  padding: 20px;
-  text-align: center;
-}
-
-.mainBtn {
-  border: 2px solid #fc9f5b;
-  padding: 10px 30px;
-  border-radius: 20px;
-  background-color: #124e78;
-  color: #fc9f5b;
-  font-size: 25px;
-  background-size: 200% auto;
-  background-image: linear-gradient(to right, #124e78 0%, #78b9e7 50%, #124e78 100%);
-  transition: 0.5s;
-  outline: none;
-  cursor: pointer;
-  user-select: none;
-  margin: 10px auto;
-  z-index: 99;
-}
-
-#startBtn {
-  margin: 50px auto;
-}
-
-.mainBtn:active {
-  transform: scale(0.9);
-}
-
-.mainBtn:hover {
-  background-position: right center;
-}
-
-#playAgainBtn {
-  display: none;
 }
 
 #underText {
