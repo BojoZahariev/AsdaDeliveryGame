@@ -149,16 +149,17 @@ const checkDead = () => {
     if (blockLeft < 190 && blockLeft > 55 && characterBottom <= 20) {
       document.querySelector('#smoke').style.display = 'block';
 
+      //pause the blocks
       document.querySelectorAll('.block').forEach(element => {
-        element.classList.remove('animateBlock');
+        element.style.animationPlayState = 'paused';
       });
       gameRunning = false;
-      el.style.left = `${blockLeft}px`;
+      //el.style.left = `${blockLeft}px`;
 
+      //stop checking for collision
       clearInterval(checkDeadInterval);
 
-      background.classList.remove('sliding');
-      background.style.display = 'none';
+      background.style.animationPlayState = 'paused';
       gameOverTitle.style.display = 'block';
       playAgainBtn.style.display = 'block';
       van.classList.remove('animatedVan');
