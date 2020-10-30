@@ -5,6 +5,7 @@ const wheel1 = document.querySelector('#wheel1');
 const wheel2 = document.querySelector('#wheel2');
 const block = document.querySelector('#block');
 const score = document.querySelector('#score');
+const startDiv = document.querySelector('#startDiv');
 const startBtn = document.querySelector('#startBtn');
 const playAgainBtn = document.querySelector('#playAgainBtn');
 const background = document.querySelector('#background');
@@ -100,7 +101,7 @@ startBtn.addEventListener('click', () => {
   //small delay for the jump function so it doesn't jump with the start click
   setTimeout(() => {
     document.addEventListener('click', jump);
-    startBtn.style.display = 'none';
+    startDiv.style.display = 'none';
     background.classList.add('sliding');
 
     checkDeadInterval = setInterval(checkDead, 10);
