@@ -72,17 +72,9 @@ form.addEventListener('submit', e => {
 });
 
 submitBtn.addEventListener('click', e => {
-  submitBtn.style.width = '70px';
+  submitBtn.style.width = '75px';
   submitBtn.textContent = 'Submit';
 });
-/*
-const submitBtnChange = () => {
-  submitBtn.style.width = '50px';
-  submitBtn.textContent = 'Submit';
-};
-*/
-
-//submitBtn.addEventListener('click', submitBtnChange);
 
 const jump = () => {
   if (character.classList === 'animate' || !gameRunning) {

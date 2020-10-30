@@ -9,6 +9,7 @@
 html {
   background-color: #bfd7ea;
   color: #2e4057;
+  font-family: 'Grandstander', cursive;
 }
 
 .bigTitle {
@@ -17,6 +18,7 @@ html {
   padding: 40px;
   color: #2e4057;
   margin-bottom: 50px;
+  font-family: 'Mountains of Christmas', cursive;
 }
 
 .logo {
@@ -33,7 +35,6 @@ html {
   height: 350px;
   overflow: hidden;
   position: relative;
-  border-bottom: 2px solid #2e4057;
   background-color: #bfd7ea;
   margin: 20px auto;
 }
@@ -392,6 +393,7 @@ html {
   padding: 5px;
   z-index: 99;
   color: #2e4057;
+  font-size: 25px;
 }
 
 .endGameDiv {
@@ -422,6 +424,7 @@ html {
   margin: 10px auto;
   z-index: 99;
   text-shadow: 2px 1px 2px #222;
+  font-family: 'Grandstander', cursive;
 }
 
 #startDiv {
@@ -436,6 +439,7 @@ html {
   text-align: center;
   font-size: 20px;
   user-select: none;
+  font-family: 'Grandstander', cursive;
 }
 
 #mouse {
@@ -463,6 +467,8 @@ html {
   transform: scaleX(0.1);
   animation: expand 2s linear forwards;
   -webkit-animation: expand 2s linear forwards;
+  color: #ed254e;
+  text-shadow: 2px 1px 2px #222;
 }
 
 @keyframes expand {
