@@ -26,8 +26,6 @@ let slowStart = true;
 var database = firebase.database();
 
 // Get a reference to the recommendations object of your Firebase.
-// Note: this doesn't exist yet. But when we write to our Firebase using
-// this reference, it will create this object for us!
 var playersOrdered = database
   .ref()
   .child('players')
