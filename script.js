@@ -42,6 +42,7 @@ const displayScores = data => {
   //clear the list
   topScores.innerHTML = '';
 
+  let i = 0;
   data.forEach(function(userSnapshot) {
     let scorePart = document.createElement('li');
     let scorePartName = document.createElement('span');
@@ -51,8 +52,24 @@ const displayScores = data => {
     scorePart.appendChild(scorePartName);
     scorePart.appendChild(scorePartScore);
 
-    //scorePart.textContent = `${userSnapshot.val().name}: ${userSnapshot.val().score}`;
+    //Medals
+    if (i >= 2) {
+      let medal = document.createElement('img');
+      if (i === 2) {
+        medal.src = 'images/bronze-medal.png';
+      } else if (i === 3) {
+        medal.src = 'images/silver-medal.png';
+      } else if (i === 4) {
+        medal.src = 'images/gold-medal.png';
+      }
+
+      medal.classList.add('medals');
+      scorePart.appendChild(medal);
+    }
+
     topScores.appendChild(scorePart);
+
+    i++;
   });
 };
 
