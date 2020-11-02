@@ -14,10 +14,9 @@ html {
 
 #corner1 {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 150px;
-  transform: scaleY(-1);
 }
 
 #corner2 {
