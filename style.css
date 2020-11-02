@@ -607,12 +607,15 @@ label {
   text-align: center;
   border-bottom: 1px solid #2e4057;
   width: 300px;
+  font-size: 25px;
   margin: auto;
-  padding: 10px;
+  padding: 5px;
+  color: #ed254e;
+  text-shadow: 2px 1px 2px #222;
 }
 
 #topScores {
-  max-width: 200px;
+  max-width: 250px;
   margin: 10px auto;
   list-style: none;
   text-align: center;
@@ -623,6 +626,8 @@ label {
 #topScores > li {
   display: flex;
   justify-content: space-between;
+  font-size: 16px;
+  padding: 2px;
 }
 
 /* customizable snowflake styling */
