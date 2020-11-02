@@ -412,6 +412,12 @@ html {
   font-size: 25px;
 }
 
+#score {
+  font-size: 30px;
+  color: #fc9f5b;
+  text-shadow: 2px 1px 2px #222;
+}
+
 .endGameDiv {
   top: 0;
   width: 100%;
