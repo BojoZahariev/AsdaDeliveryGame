@@ -781,3 +781,9 @@ label {
   -webkit-animation-delay: 4s, 2.5s;
   animation-delay: 4s, 2.5s;
 }
+
+#madeBy {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
