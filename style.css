@@ -787,3 +787,65 @@ label {
   bottom: 0;
   left: 0;
 }
+
+#fumes {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  position: absolute;
+  top: 44px;
+  left: -20px;
+  border-radius: 50%;
+  display: none;
+
+  animation: exhaust 1.2s infinite;
+  -webkit-animation: exhaust 1.2s infinite;
+}
+
+@-webkit-keyframes exhaust {
+  0% {
+    transform: translateX(0px) scale(0.1);
+  }
+
+  100% {
+    transform: translateX(-120px) scale(1) rotate(90deg);
+  }
+}
+
+@keyframes exhaust {
+  0% {
+    transform: translateX(0px) scale(0.1);
+  }
+  100% {
+    transform: translateX(-120px) scale(1) rotate(90deg);
+  }
+}
+
+.fumes1 {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 100%;
+  margin-left: -10px;
+}
+
+.fumes2 {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 80%;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.fumes3 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 100%;
+  margin-left: -1px;
+}

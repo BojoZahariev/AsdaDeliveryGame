@@ -3,6 +3,8 @@ const character = document.querySelector('#character');
 const van = document.querySelector('#van');
 const wheel1 = document.querySelector('#wheel1');
 const wheel2 = document.querySelector('#wheel2');
+const fumes = document.querySelector('#fumes');
+
 const block = document.querySelector('#block');
 const score = document.querySelector('#score');
 const startDiv = document.querySelector('#startDiv');
@@ -111,6 +113,7 @@ const jump = () => {
 
 startBtn.addEventListener('click', () => {
   van.classList.add('animatedVan');
+  fumes.style.display = 'block';
 
   //small delay for the jump function so it doesn't jump with the start click
   setTimeout(() => {
@@ -181,6 +184,7 @@ const checkDead = () => {
       van.classList.add('vanCrashed');
       wheel1.classList.add('animatedWheel1');
       wheel2.classList.add('animatedWheel2');
+      fumes.style.display = 'none';
       form.style.display = 'block';
     }
   });
