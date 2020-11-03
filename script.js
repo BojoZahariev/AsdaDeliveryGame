@@ -79,13 +79,18 @@ let players = database.ref().child('players');
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  players.push({
-    name: name.value.toUpperCase(),
-    score: scoreValue
-  });
+  //profanity filter
+  let badWords = ['fuck', 'cunt', 'penis'];
+  let isInclude = badWords.some(word => name.value.includes(word));
+  if (!isInclude) {
+    players.push({
+      name: name.value.toUpperCase(),
+      score: scoreValue
+    });
 
-  form.reset();
-  form.style.display = 'none';
+    form.reset();
+    form.style.display = 'none';
+  }
 });
 
 submitBtn.addEventListener('click', e => {
