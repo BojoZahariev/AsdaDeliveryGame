@@ -169,28 +169,57 @@ const checkDead = () => {
       }
     }
 
-    //checks for collision
-    if (blockLeft < 190 && blockLeft > 55 && characterBottom <= 20) {
-      document.querySelector('#smoke').style.display = 'block';
+    //mobile
+    if (character.style.width < '120px') {
+      //checks for collision
+      if (blockLeft < 140 && blockLeft > 55 && characterBottom <= 10) {
+        document.querySelector('#smoke').style.display = 'block';
 
-      //pause the blocks
-      document.querySelectorAll('.block').forEach(element => {
-        element.style.animationPlayState = 'paused';
-      });
-      gameRunning = false;
+        //pause the blocks
+        document.querySelectorAll('.block').forEach(element => {
+          element.style.animationPlayState = 'paused';
+        });
+        gameRunning = false;
 
-      //stop checking for collision
-      clearInterval(checkDeadInterval);
+        //stop checking for collision
+        clearInterval(checkDeadInterval);
 
-      background.style.animationPlayState = 'paused';
-      gameOverTitle.style.display = 'block';
-      playAgainBtn.style.display = 'block';
-      van.classList.remove('animatedVan');
-      van.classList.add('vanCrashed');
-      wheel1.classList.add('animatedWheel1');
-      wheel2.classList.add('animatedWheel2');
-      fumes.style.display = 'none';
-      form.style.display = 'block';
+        background.style.animationPlayState = 'paused';
+        gameOverTitle.style.display = 'block';
+        playAgainBtn.style.display = 'block';
+        van.classList.remove('animatedVan');
+        van.classList.add('vanCrashed');
+        wheel1.classList.add('animatedWheel1');
+        wheel2.classList.add('animatedWheel2');
+        fumes.style.display = 'none';
+        form.style.display = 'block';
+      }
+
+      //desktop
+    } else {
+      //checks for collision
+      if (blockLeft < 190 && blockLeft > 55 && characterBottom <= 20) {
+        document.querySelector('#smoke').style.display = 'block';
+
+        //pause the blocks
+        document.querySelectorAll('.block').forEach(element => {
+          element.style.animationPlayState = 'paused';
+        });
+        gameRunning = false;
+
+        //stop checking for collision
+        clearInterval(checkDeadInterval);
+
+        background.style.animationPlayState = 'paused';
+        gameOverTitle.style.display = 'block';
+        playAgainBtn.style.display = 'block';
+        van.classList.remove('animatedVan');
+        van.classList.add('vanCrashed');
+        wheel1.classList.add('animatedWheel1');
+        wheel2.classList.add('animatedWheel2');
+        fumes.style.display = 'none';
+        form.style.display = 'block';
+      }
     }
   });
 };

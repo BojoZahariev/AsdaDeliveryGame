@@ -134,11 +134,11 @@ html {
     bottom: 0;
   }
   30% {
-    bottom: 55px;
+    bottom: 60px;
     transform: rotate(-20deg);
   }
   70% {
-    bottom: 55px;
+    bottom: 60px;
   }
 
   90% {
@@ -881,5 +881,34 @@ label {
 
   #background {
     height: 252px;
+  }
+
+  #character {
+    width: 100px;
+  }
+
+  @keyframes jump {
+    0% {
+      bottom: 0;
+    }
+    30% {
+      bottom: 40px;
+      transform: rotate(-20deg);
+    }
+    70% {
+      bottom: 40px;
+    }
+
+    90% {
+      bottom: 20px;
+      transform: rotate(30deg);
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+
+  .block {
+    width: 30px;
   }
 }
