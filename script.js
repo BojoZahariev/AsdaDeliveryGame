@@ -45,6 +45,7 @@ const displayScores = data => {
   topScores.innerHTML = '';
   let myArray = [];
 
+  //highest score goes first
   data.forEach(function(userSnapshot) {
     myArray.unshift([userSnapshot.val().name, userSnapshot.val().score]);
   });
@@ -59,7 +60,7 @@ const displayScores = data => {
     scorePart.appendChild(scorePartName);
     scorePart.appendChild(scorePartScore);
 
-    //Medals
+    //Medals for top 3
     if (i < 3) {
       let medal = document.createElement('img');
       if (i === 2) {
