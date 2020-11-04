@@ -43,25 +43,30 @@ playersOrdered.on('value', function(snapshot) {
 const displayScores = data => {
   //clear the list
   topScores.innerHTML = '';
+  let myArray = [];
+
+  data.forEach(function(userSnapshot) {
+    myArray.unshift([userSnapshot.val().name, userSnapshot.val().score]);
+  });
 
   let i = 0;
-  data.forEach(function(userSnapshot) {
+  myArray.forEach(el => {
     let scorePart = document.createElement('li');
     let scorePartName = document.createElement('span');
     let scorePartScore = document.createElement('span');
-    scorePartName.textContent = userSnapshot.val().name;
-    scorePartScore.textContent = userSnapshot.val().score;
+    scorePartName.textContent = el[0];
+    scorePartScore.textContent = el[1];
     scorePart.appendChild(scorePartName);
     scorePart.appendChild(scorePartScore);
 
     //Medals
-    if (i >= 2) {
+    if (i < 3) {
       let medal = document.createElement('img');
       if (i === 2) {
         medal.src = 'images/bronze-medal.png';
-      } else if (i === 3) {
+      } else if (i === 1) {
         medal.src = 'images/silver-medal.png';
-      } else if (i === 4) {
+      } else if (i === 0) {
         medal.src = 'images/gold-medal.png';
       }
 
@@ -172,7 +177,6 @@ const checkDead = () => {
         element.style.animationPlayState = 'paused';
       });
       gameRunning = false;
-      //el.style.left = `${blockLeft}px`;
 
       //stop checking for collision
       clearInterval(checkDeadInterval);
