@@ -144,6 +144,7 @@ const removeJump = () => {
 //checks for collision
 const checkDead = () => {
   let characterBottom = parseInt(window.getComputedStyle(character).getPropertyValue('bottom'));
+  let characterWidth = parseInt(window.getComputedStyle(character).getPropertyValue('width'));
   document.querySelectorAll('.block').forEach(el => {
     let blockLeft = parseInt(window.getComputedStyle(el).getPropertyValue('left'));
 
@@ -170,9 +171,9 @@ const checkDead = () => {
     }
 
     //mobile
-    if (character.style.width < '120px') {
+    if (characterWidth < 120) {
       //checks for collision
-      if (blockLeft < 140 && blockLeft > 55 && characterBottom <= 10) {
+      if (blockLeft < 145 && blockLeft > 55 && characterBottom <= 10) {
         document.querySelector('#smoke').style.display = 'block';
 
         //pause the blocks
