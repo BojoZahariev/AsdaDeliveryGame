@@ -173,7 +173,7 @@ const checkDead = () => {
     //mobile
     if (characterWidth < 120) {
       //checks for collision
-      if (blockLeft < 145 && blockLeft > 55 && characterBottom <= 10) {
+      if (blockLeft < 145 && blockLeft > 45 && characterBottom <= 10) {
         document.querySelector('#smoke').style.display = 'block';
 
         //pause the blocks
