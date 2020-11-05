@@ -937,11 +937,6 @@ label {
     width: 30px;
   }
 
-  .animateBlock {
-    animation: block 5.5s forwards linear;
-    -webkit-animation: block 5.5s forwards linear;
-  }
-
   #smoke {
     width: 50px;
     height: 80px;
