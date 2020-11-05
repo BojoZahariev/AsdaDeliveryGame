@@ -863,15 +863,13 @@ label {
   }
 
   .bigTitle {
-    font-size: 30px;
-
-    padding: 20px;
-
+    font-size: 35px;
+    padding: 5px;
     margin-bottom: 30px;
   }
 
   .logo {
-    width: 100px;
+    width: 120px;
   }
 
   #game {
@@ -996,5 +994,10 @@ label {
 
   #mouse {
     width: 30px;
+  }
+
+  #gameOverTitle {
+    padding: 5px;
+    font-size: 40px;
   }
 }
