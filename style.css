@@ -938,8 +938,8 @@ label {
   }
 
   .animateBlock {
-    animation: block 5s forwards linear;
-    -webkit-animation: block 5s forwards linear;
+    animation: block 5.5s forwards linear;
+    -webkit-animation: block 5.5s forwards linear;
   }
 
   #smoke {
