@@ -425,6 +425,7 @@ html {
   width: 100%;
   position: absolute;
   text-align: center;
+  z-index: 999;
 }
 
 .btnDiv {
@@ -883,6 +884,11 @@ label {
     height: 252px;
   }
 
+  .sliding {
+    animation: slide 50s linear infinite;
+    -webkit-animation: slide 50s linear infinite;
+  }
+
   #character {
     width: 100px;
   }
@@ -936,5 +942,38 @@ label {
   .animateBlock {
     animation: block 5s forwards linear;
     -webkit-animation: block 5s forwards linear;
+  }
+
+  #smoke {
+    width: 50px;
+    height: 80px;
+    left: 115px;
+    bottom: 10px;
+  }
+
+  #smoke:after {
+    width: 80px;
+    height: 80px;
+  }
+
+  .scoreText {
+    padding: 2px;
+    font-size: 18px;
+  }
+
+  #score {
+    font-size: 20px;
+  }
+
+  #startDiv {
+    margin: 50px auto;
+  }
+
+  #underText {
+    font-size: 18px;
+  }
+
+  #mouse {
+    width: 30px;
   }
 }
