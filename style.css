@@ -1001,4 +1001,26 @@ label {
   .snowflake {
     font-size: 10px;
   }
+
+  .smallTitle {
+    font-size: 20px;
+    text-shadow: 1px 1px 1px #222;
+  }
+
+  #topScores {
+    margin: 5px auto;
+  }
+
+  #topScores > li {
+    font-size: 13px;
+    padding: 2px;
+  }
+
+  .medals {
+    width: 15px;
+  }
+
+  #madeBy {
+    font-size: 12px;
+  }
 }
