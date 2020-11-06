@@ -891,6 +891,11 @@ label {
     width: 100px;
   }
 
+  .animate {
+    animation: jump 0.8s linear;
+    -webkit-animation: jump 0.8s linear;
+  }
+
   @keyframes jump {
     0% {
       bottom: 0;
