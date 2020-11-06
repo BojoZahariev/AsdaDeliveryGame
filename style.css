@@ -710,6 +710,24 @@ label {
   font-size: 12px;
   font-family: Arial, sans-serif;
   text-shadow: 0 0 5px #000;
+  position: absolute;
+  top: -10%;
+  z-index: 9999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+  -webkit-animation-duration: 7s, 3s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+  animation-name: snowflakes-fall, snowflakes-shake;
+  animation-duration: 7s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running;
 }
 
 @-webkit-keyframes snowflakes-fall {
@@ -750,27 +768,6 @@ label {
   50% {
     transform: translateX(80px);
   }
-}
-
-.snowflake {
-  position: absolute;
-  top: -10%;
-  z-index: 9999;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: default;
-  -webkit-animation-name: snowflakes-fall, snowflakes-shake;
-  -webkit-animation-duration: 7s, 3s;
-  -webkit-animation-timing-function: linear, ease-in-out;
-  -webkit-animation-iteration-count: infinite, infinite;
-  -webkit-animation-play-state: running, running;
-  animation-name: snowflakes-fall, snowflakes-shake;
-  animation-duration: 7s, 3s;
-  animation-timing-function: linear, ease-in-out;
-  animation-iteration-count: infinite, infinite;
-  animation-play-state: running, running;
 }
 
 .snowflake:nth-of-type(0) {
@@ -945,8 +942,8 @@ label {
   #smoke {
     width: 50px;
     height: 80px;
-    left: 115px;
-    bottom: 10px;
+    left: 125px;
+    bottom: 0px;
   }
 
   #smoke:after {
@@ -999,5 +996,9 @@ label {
   #gameOverTitle {
     padding: 5px;
     font-size: 40px;
+  }
+
+  .snowflake {
+    font-size: 10px;
   }
 }
