@@ -88,7 +88,7 @@ form.addEventListener('submit', e => {
   e.preventDefault();
 
   //profanity filter
-  let badWords = ['fuck', 'cunt', 'penis'];
+  let badWords = ['fuck', 'cunt', 'penis', 'sex', 'vagina', 'porn', '69'];
   let isInclude = badWords.some(word => name.value.includes(word));
   if (!isInclude) {
     players.push({
